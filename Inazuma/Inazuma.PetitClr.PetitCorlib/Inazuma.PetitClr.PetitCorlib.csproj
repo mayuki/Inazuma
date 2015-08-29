@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{61FD9EF2-BD48-4BBE-9FB6-9D47B71371E0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>System</RootNamespace>
+    <AssemblyName>Inazuma.PetitClr.PetitCorlib</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <!-- This prevents the default MsBuild targets from referencing System.Core.dll -->
+    <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
+    <!-- These prevent the default MsBuild targets from referencing System.dll and mscorlib.dll -->
+    <NoStdLib>true</NoStdLib>
+    <NoCompilerStandardLib>true</NoCompilerStandardLib>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="System\AccessViolationException.cs" />
+    <Compile Include="System\Action.cs" />
+    <Compile Include="System\ApplicationException.cs" />
+    <Compile Include="System\ArgumentException.cs" />
+    <Compile Include="System\ArgumentNullException.cs" />
+    <Compile Include="System\ArgumentOutOfRangeException.cs" />
+    <Compile Include="System\ArithmeticException.cs" />
+    <Compile Include="System\Array.cs" />
+    <Compile Include="System\ArrayTypeMismatchException.cs" />
+    <Compile Include="System\Attribute.cs" />
+    <Compile Include="System\AttributeTargets.cs" />
+    <Compile Include="System\AttributeUsageAttribute.cs" />
+    <Compile Include="System\Boolean.cs" />
+    <Compile Include="System\CLSCompliantAttribute.cs" />
+    <Compile Include="System\Collections\Generic\ICollection.cs" />
+    <Compile Include="System\Collections\Generic\IComparer.cs" />
+    <Compile Include="System\Collections\Generic\IEnumerable.cs" />
+    <Compile Include="System\Collections\Generic\IEnumerator.cs" />
+    <Compile Include="System\Collections\Generic\IEqualityComparer.cs" />
+    <Compile Include="System\Collections\Generic\IList.cs" />
+    <Compile Include="System\Collections\Generic\IReadOnlyCollection.cs" />
+    <Compile Include="System\Collections\Generic\IReadOnlyList.cs" />
+    <Compile Include="System\Collections\Generic\KeyNotFoundException.cs" />
+    <Compile Include="System\Collections\ICollection.cs" />
+    <Compile Include="System\Collections\IComparer.cs" />
+    <Compile Include="System\Collections\IEnumerable.cs" />
+    <Compile Include="System\Collections\IEnumerator.cs" />
+    <Compile Include="System\Collections\IEqualityComparer.cs" />
+    <Compile Include="System\Collections\IHashCodeProvider.cs" />
+    <Compile Include="System\DateTime.cs" />
+    <Compile Include="System\Decimal.cs" />
+    <Compile Include="System\Diagnostics\CodeAnalysis\SuppressMessageAttribute.cs" />
+    <Compile Include="System\Diagnostics\ConditionalAttribute.cs" />
+    <Compile Include="System\Diagnostics\Contracts\Contracts.cs" />
+    <Compile Include="System\Diagnostics\Debugger.cs" />
+    <Compile Include="System\Diagnostics\DebuggerAttributes.cs" />
+    <Compile Include="System\DivideByZeroException.cs" />
+    <Compile Include="System\DllNotFoundException.cs" />
+    <Compile Include="System\EntryPointNotFoundException.cs" />
+    <Compile Include="System\Enum.cs" />
+    <Compile Include="System\Environment.cs" />
+    <Compile Include="System\Exception.cs" />
+    <Compile Include="System\ExecutionEngineException.cs" />
+    <Compile Include="System\FieldAccessException.cs" />
+    <Compile Include="System\Globalization\__Placeholder.cs" />
+    <Compile Include="System\ICloneable.cs" />
+    <Compile Include="System\IComparable.cs" />
+    <Compile Include="System\IConvertible.cs" />
+    <Compile Include="System\ICustomFormatter.cs" />
+    <Compile Include="System\IDisposable.cs" />
+    <Compile Include="System\IEquatable.cs" />
+    <Compile Include="System\IFormatProvider.cs" />
+    <Compile Include="System\IFormattable.cs" />
+    <Compile Include="System\IndexOutOfRangeException.cs" />
+    <Compile Include="System\InsufficientExecutionStackException.cs" />
+    <Compile Include="System\InsufficientMemoryException.cs" />
+    <Compile Include="System\InvalidOperationException.cs" />
+    <Compile Include="System\InvalidProgramException.cs" />
+    <Compile Include="System\InvalidTimeZoneException.cs" />
+    <Compile Include="System\IObservable.cs" />
+    <Compile Include="System\IObserver.cs" />
+    <Compile Include="System\MemberAccessException.cs" />
+    <Compile Include="System\MethodAccessException.cs" />
+    <Compile Include="System\MissingFieldException.cs" />
+    <Compile Include="System\MissingMemberException.cs" />
+    <Compile Include="System\MissingMethodException.cs" />
+    <Compile Include="System\MulticastDelegate.cs" />
+    <Compile Include="System\Delegate.cs" />
+    <Compile Include="System\Char.cs" />
+    <Compile Include="System\Double.cs" />
+    <Compile Include="System\MulticastNotSupportedException.cs" />
+    <Compile Include="System\NonSerializedAttribute.cs" />
+    <Compile Include="System\NotImplementedException.cs" />
+    <Compile Include="System\NotSupportedException.cs" />
+    <Compile Include="System\NullReferenceException.cs" />
+    <Compile Include="System\ObjectDisposedException.cs" />
+    <Compile Include="System\ObsoleteAttribute.cs" />
+    <Compile Include="System\OutOfMemoryException.cs" />
+    <Compile Include="System\OverflowException.cs" />
+    <Compile Include="System\ParamArrayAttribute.cs" />
+    <Compile Include="System\PlatformNotSupportedException.cs" />
+    <Compile Include="System\Reflection\AssemblyAttributes.cs" />
+    <Compile Include="System\Reflection\DefaultMemberAttribute.cs" />
+    <Compile Include="System\Reflection\MethodBase.cs" />
+    <Compile Include="System\Reflection\ParameterInfo.cs" />
+    <Compile Include="System\ParamsArray.cs" />
+    <Compile Include="System\RuntimeHandles.cs" />
+    <Compile Include="System\Runtime\CompilerServices\IsVolatile.cs" />
+    <Compile Include="System\Runtime\CompilerServices\TypeDependencyAttribute.cs" />
+    <Compile Include="System\Runtime\CompilerServices\TypeForwardedFromAttribute.cs" />
+    <Compile Include="System\Runtime\Remoting\__Placeholder.cs" />
+    <Compile Include="System\Runtime\Serialization\ISerializable.cs" />
+    <Compile Include="System\Runtime\Serialization\SerializationAttributes.cs" />
+    <Compile Include="System\Runtime\Serialization\SerializationInfo.cs" />
+    <Compile Include="System\Runtime\Serialization\StreamingContext.cs" />
+    <Compile Include="System\Runtime\Versioning\__Placeholder.cs" />
+    <Compile Include="System\Security\Attributes.cs" />
+    <Compile Include="System\StackOverflowException.cs" />
+    <Compile Include="System\SystemException.cs" />
+    <Compile Include="System\Threading\Thread.cs" />
+    <Compile Include="System\TimeoutException.cs" />
+    <Compile Include="System\TimeZoneNotFoundException.cs" />
+    <Compile Include="System\Type.cs" />
+    <Compile Include="System\TypeAccessException.cs" />
+    <Compile Include="System\TypeCode.cs" />
+    <Compile Include="System\TypeInitializationException.cs" />
+    <Compile Include="System\TypeLoadException.cs" />
+    <Compile Include="System\UIntPtr.cs" />
+    <Compile Include="System\IntPtr.cs" />
+    <Compile Include="System\Single.cs" />
+    <Compile Include="System\SByte.cs" />
+    <Compile Include="System\Byte.cs" />
+    <Compile Include="System\Console.cs" />
+    <Compile Include="System\FlagsAttribute.cs" />
+    <Compile Include="System\UInt16.cs" />
+    <Compile Include="System\UInt32.cs" />
+    <Compile Include="System\UInt64.cs" />
+    <Compile Include="System\Int64.cs" />
+    <Compile Include="System\Int32.cs" />
+    <Compile Include="System\Object.cs" />
+    <Compile Include="System\Reflection\MethodImplAttributes.cs" />
+    <Compile Include="System\Reflection\TypeAttributes.cs" />
+    <Compile Include="System\Runtime\CompilerServices\MethodImplAttribute.cs" />
+    <Compile Include="System\Runtime\InteropServices\Attributes.cs" />
+    <Compile Include="System\Serialize.cs" />
+    <Compile Include="System\String.cs" />
+    <Compile Include="System\Int16.cs" />
+    <Compile Include="System\UnauthorizedAccessException.cs" />
+    <Compile Include="System\ValueType.cs" />
+    <Compile Include="System\Void.cs" />
+    <Compile Include="System\__HResults.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
