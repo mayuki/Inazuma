@@ -11,4 +11,4 @@ Minimal CLR Implementation (MSIL Interpreter) for .NET Framework. Nanodesu!
 
 ## Based on
 - CoreCLR (Apache 2 License)
-- Mono.Cecli (MIT/X11 License)
+- Mono.Cecil (MIT/X11 License)
