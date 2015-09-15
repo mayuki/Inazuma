@@ -21,6 +21,26 @@ namespace Inazuma.PetitClr.SampleHost
             {
                 return "HogeMoge";
             });
+            PetitClrRuntime.Current.InternalCallMethods.Add("System.Void System.Console::Write(System.String)", (thisArg, frame, methArgs) =>
+            {
+                System.Console.Write(methArgs[0]);
+                return null;
+            });
+            PetitClrRuntime.Current.InternalCallMethods.Add("System.Void System.Console::Write(System.String,System.Object)", (thisArg, frame, methArgs) =>
+            {
+                System.Console.Write(methArgs[0].ToString(), methArgs[1]);
+                return null;
+            });
+            PetitClrRuntime.Current.InternalCallMethods.Add("System.Void System.Console::Write(System.Int32)", (thisArg, frame, methArgs) =>
+            {
+                System.Console.Write(methArgs[0]);
+                return null;
+            });
+            PetitClrRuntime.Current.InternalCallMethods.Add("System.Void System.Console::WriteLine()", (thisArg, frame, methArgs) =>
+            {
+                System.Console.WriteLine();
+                return null;
+            });
             PetitClrRuntime.Current.InternalCallMethods.Add("System.Void System.Console::WriteLine(System.String)", (thisArg, frame, methArgs) =>
             {
                 System.Console.WriteLine(methArgs[0]);

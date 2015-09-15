@@ -743,8 +743,8 @@ namespace Inazuma.PetitClr.Core
 
         private void Add(bool checkOverflow, bool unsigned)
         {
-            var val1 = _opStack.Pop();
             var val2 = _opStack.Pop();
+            var val1 = _opStack.Pop();
 
             // TODO: float/double
             // TODO: overflow
@@ -764,8 +764,8 @@ namespace Inazuma.PetitClr.Core
         }
         private void Sub(bool checkOverflow, bool unsigned)
         {
-            var val1 = _opStack.Pop();
             var val2 = _opStack.Pop();
+            var val1 = _opStack.Pop();
 
             // TODO: float/double
             // TODO: overflow
@@ -785,8 +785,8 @@ namespace Inazuma.PetitClr.Core
         }
         private void Mul(bool checkOverflow, bool unsigned)
         {
-            var val1 = _opStack.Pop();
             var val2 = _opStack.Pop();
+            var val1 = _opStack.Pop();
 
             // TODO: float/double
             // TODO: overflow
@@ -806,8 +806,8 @@ namespace Inazuma.PetitClr.Core
         }
         private void Div(bool checkOverflow, bool unsigned)
         {
-            var val1 = _opStack.Pop();
             var val2 = _opStack.Pop();
+            var val1 = _opStack.Pop();
 
             // TODO: float/double
             // TODO: overflow
@@ -827,8 +827,8 @@ namespace Inazuma.PetitClr.Core
         }
         private void Rem(bool checkOverflow, bool unsigned)
         {
-            var val1 = _opStack.Pop();
             var val2 = _opStack.Pop();
+            var val1 = _opStack.Pop();
 
             // TODO: float/double
             // TODO: overflow

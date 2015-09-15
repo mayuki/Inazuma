@@ -1,13 +1,57 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 
 namespace Inazuma.PetitClr.SampleHost
 {
+    class FizzBuzz
+    {
+        public void Run()
+        {
+            Debugger.Break();
+            for (var i = 1; i < 100; i++)
+            {
+                if (i % 15 == 0)
+                {
+                    this.Fizz();
+                    this.Buzz();
+                }
+                else if (i % 3 == 0)
+                {
+                    this.Fizz();
+                }
+                else if (i % 5 == 0)
+                {
+                    this.Buzz();
+                }
+                else
+                {
+                    Console.Write(i);
+                }
+                Console.WriteLine();
+            }
+        }
+
+        public void Fizz()
+        {
+            Console.Write("Fizz");
+        }
+        public void Buzz()
+        {
+            Console.Write("Buzz");
+        }
+    }
+
     class SampleProgram
     {
         public void Main()
+        {
+            new FizzBuzz().Run();
+        }
+
+        public void Main_()
         {
             //try
             //{

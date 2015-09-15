@@ -177,21 +177,7 @@ namespace Inazuma.PetitClr.Core.Structure
 
         private void CreateInterfaceVtableMap()
         {
-            for (var i = 0; i < _halfBakedMethodTable.MethodSlots.Length; i++)
-            {
-                var methDesc = _halfBakedMethodTable.MethodSlots[i];
-                if (methDesc.Definition.HasOverrides)
-                {
-                    foreach (var overrideMethod in methDesc.Definition.Overrides)
-                    {
-                        if (overrideMethod.DeclaringType.Resolve().IsInterface)
-                        {
-                            _halfBakedMethodTable.InterfaceMethodSlotMap[overrideMethod] = i;
-                            break;
-                        }
-                    }
-                }
-            }
+            // TODO: place interface method impls.
         }
 
         private void PlaceRegularStaticFields()
@@ -242,7 +228,8 @@ namespace Inazuma.PetitClr.Core.Structure
         private MethodDesc[] CreateMethodSlotsFromTypeDef(TypeDefinition typeDef)
         {
             var methods = new List<MethodDefinition>();
-            var declaredMethods = typeDef.Methods.Where(x => x.IsVirtual).ToArray();
+
+            var declaredMethods = typeDef.Methods.Where(x => x.IsVirtual && !x.DeclaringType.IsInterface).ToArray();
             var nonOverrideMethods = new List<MethodDefinition>();
             if (typeDef.BaseType != null)
             {
