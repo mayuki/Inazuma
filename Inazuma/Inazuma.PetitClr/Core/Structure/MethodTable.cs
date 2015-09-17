@@ -215,21 +215,8 @@ namespace Inazuma.PetitClr.Core.Structure
 
         private MethodDefinition[] GetVirtualMethodDefsFromTypeDef(TypeDefinition typeDef)
         {
-            if (typeDef.BaseType != null)
-            {
-                return GetVirtualMethodDefsFromTypeDef(typeDef.BaseType.Resolve()).Concat(typeDef.Methods.Where(x => !x.IsStatic && x.IsVirtual)).ToArray();
-            }
-            else
-            {
-                return typeDef.Methods.Where(x => !x.IsStatic && x.IsVirtual).ToArray();
-            }
-        }
-
-        private MethodDesc[] CreateMethodSlotsFromTypeDef(TypeDefinition typeDef)
-        {
             var methods = new List<MethodDefinition>();
-
-            var declaredMethods = typeDef.Methods.Where(x => x.IsVirtual && !x.DeclaringType.IsInterface).ToArray();
+            var declaredMethods = typeDef.Methods.Where(x => x.IsVirtual && !x.IsStatic && !x.DeclaringType.IsInterface).ToArray();
             var nonOverrideMethods = new List<MethodDefinition>();
             if (typeDef.BaseType != null)
             {
@@ -264,7 +251,14 @@ namespace Inazuma.PetitClr.Core.Structure
             {
                 methods.AddRange(declaredMethods); // virtual
             }
+            return methods.ToArray();
+        }
 
+        private MethodDesc[] CreateMethodSlotsFromTypeDef(TypeDefinition typeDef)
+        {
+            var methods = new List<MethodDefinition>();
+
+            methods.AddRange(GetVirtualMethodDefsFromTypeDef(typeDef)); // virtual
             methods.AddRange(typeDef.Methods.Where(x => !x.IsVirtual && !x.IsStatic)); // non-virtual
             methods.AddRange(typeDef.Methods.Where(x => x.IsStatic)); // static
 
